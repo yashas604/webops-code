@@ -1,0 +1,16 @@
+#taking the array from the user in form of basic string input
+A=input('enter the array you want to sort out:');
+#converting the input data in form of a nested list to use for further operation
+a=eval(A);
+result_list=[];
+#creating an empty list to input data
+def base_listsorter(a):
+    #using for function to operate on each individual element
+    for i in a:
+        if type(i)==list:
+            i=base_listsorter(i);
+        else:
+            result_list.append(i)
+#calling out the function
+base_listsorter(a)
+print(result_list);
